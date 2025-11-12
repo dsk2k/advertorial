@@ -714,20 +714,28 @@
             /* Compact USP bar on mobile */
             .usp-bar {
                 padding: 8px 0;
+                overflow: hidden;
             }
 
             .usp-container {
                 display: flex;
                 flex-wrap: nowrap;
-                gap: 8px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-                padding: 0 16px;
+                gap: 16px;
+                padding: 0;
+                animation: scroll-left 20s linear infinite;
             }
 
-            .usp-container::-webkit-scrollbar {
-                display: none;
+            .usp-container:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes scroll-left {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
             }
 
             .usp-item {
@@ -893,6 +901,23 @@
         <!-- USP Bar -->
         <div class="usp-bar">
             <div class="usp-container">
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text"><strong>Vergelijk</strong> gratis offertes</div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text"><strong>Betrouwbare</strong> vakspecialisten</div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text"><strong>Onafhankelijk</strong> advies</div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text">Meer dan <strong>10 jaar</strong> ervaring</div>
+                </div>
+                <!-- Duplicate items for seamless loop -->
                 <div class="usp-item">
                     <div class="usp-check">✓</div>
                     <div class="usp-text"><strong>Vergelijk</strong> gratis offertes</div>
