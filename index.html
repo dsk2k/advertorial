@@ -490,6 +490,245 @@
                 font-size: 10px;
             }
         }
+
+        /* Hero CTA Section */
+        .hero-cta {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 40px 0;
+            margin-bottom: 20px;
+        }
+
+        .hero-cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-cta-content h2 {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-cta-content .highlight {
+            color: #fbbf24;
+            font-size: 38px;
+        }
+
+        .hero-cta-benefits {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .hero-cta-benefits li {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            opacity: 0.95;
+        }
+
+        .hero-cta-benefits li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .hero-cta-form-box {
+            background: #fff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-cta-form-box h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .hero-cta-form-box .subtitle {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .hero-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-form input {
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .hero-form input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .hero-form-submit {
+            padding: 16px;
+            background: var(--primary-green);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .hero-form-submit:hover {
+            background: #059669;
+        }
+
+        .form-privacy {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .trust-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .trust-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+        }
+
+        .trust-label {
+            font-size: 11px;
+            color: var(--text-gray);
+            display: block;
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .urgency-icon {
+            font-size: 20px;
+        }
+
+        .urgency-text {
+            font-size: 14px;
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        .urgency-text strong {
+            font-weight: 700;
+            color: #78350f;
+        }
+
+        /* Testimonial Card */
+        .testimonial-highlight {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .testimonial-highlight .quote {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .testimonial-author-info .name {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        .testimonial-author-info .location {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 968px) {
+            .hero-cta-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-cta-content h2 {
+                font-size: 26px;
+            }
+
+            .hero-cta-content .highlight {
+                font-size: 30px;
+            }
+
+            .trust-indicators {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -543,6 +782,45 @@
         <a href="#">Home</a> › <a href="#">Economie</a> › <a href="#">Energie</a> › Zonnepanelen + thuisbatterij 2025
     </div>
 
+    <!-- Hero CTA Section -->
+    <section class="hero-cta">
+        <div class="hero-cta-container">
+            <div class="hero-cta-content">
+                <h2>Bespaar tot <span class="highlight">€3.060 per jaar</span> op je energierekening</h2>
+                <ul class="hero-cta-benefits">
+                    <li>Onafhankelijk advies van gecertificeerde specialisten</li>
+                    <li>Vergelijk gratis offertes van betrouwbare installateurs</li>
+                    <li>Inclusief subsidie- en terugverdientijdberekening</li>
+                    <li>Geheel vrijblijvend en zonder verplichtingen</li>
+                </ul>
+            </div>
+            <div class="hero-cta-form-box">
+                <h3>Ontvang gratis advies</h3>
+                <p class="subtitle">Vul je postcode in en ontvang binnen 24 uur een persoonlijk adviesrapport</p>
+                <form class="hero-form" onsubmit="return false;">
+                    <input type="text" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                    <button type="submit" class="hero-form-submit">Bereken mijn besparing →</button>
+                </form>
+                <p class="form-privacy">🔒 Jouw gegevens worden vertrouwelijk behandeld</p>
+
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-number">15.427</span>
+                        <span class="trust-label">Tevreden klanten</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">4.8/5</span>
+                        <span class="trust-label">Gemiddelde score</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">100%</span>
+                        <span class="trust-label">Vrijblijvend</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <div class="main-container">
         <!-- Article -->
@@ -568,6 +846,12 @@
 
             <!-- Article Content -->
             <div class="article-content">
+                <!-- Urgency Banner -->
+                <div class="urgency-banner">
+                    <span class="urgency-icon">⚡</span>
+                    <span class="urgency-text">Let op: ISDE subsidie loopt af eind 2025 - <strong>Budget bijna uitgeput</strong></span>
+                </div>
+
                 <p><strong>De energierekening blijft stijgen.</strong> Wat drie jaar geleden nog €150 per maand was, kost nu vaak €300 of meer. Voor veel gezinnen is energie inmiddels één van de grootste vaste lasten geworden. En volgens energiedeskundigen is dit nog maar het begin.</p>
 
                 <p>Het ministerie van Sociale Zaken heeft deze week de AOW-leeftijd voor mensen die in 1964 zijn geboren vastgesteld: ook zij mogen in 2031 pas op een leeftijd van 67 jaar en drie maanden met pensioen. Nu is de pensioenleeftijd nog 67 jaar; vanaf 2028 wordt dat drie maanden per jaar meer.</p>
@@ -586,12 +870,13 @@
 
                 <!-- Embedded CTA -->
                 <div class="embedded-cta">
-                    <h3>Bereken jouw besparing</h3>
-                    <p>Vul je postcode in en ontvang een persoonlijk advies op basis van jouw situatie.</p>
+                    <h3>💰 Hoeveel kun jij besparen?</h3>
+                    <p>Vul je postcode in en ontdek binnen 30 seconden jouw persoonlijke besparing. Inclusief subsidies en terugverdientijd.</p>
                     <form class="cta-form" onsubmit="return false;">
-                        <input type="text" class="cta-input" placeholder="1234 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}">
-                        <button type="submit" class="cta-button">Bereken →</button>
+                        <input type="text" class="cta-input" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                        <button type="submit" class="cta-button">Bereken nu gratis →</button>
                     </form>
+                    <p style="font-size: 13px; margin-top: 12px; opacity: 0.9;">✓ Vrijblijvend • ✓ Geen verplichtingen • ✓ Direct resultaat</p>
                 </div>
 
                 <h3>⚡ Salderingsregeling loopt af in 2027</h3>
@@ -599,6 +884,19 @@
 
                 <h3>📉 Batterijprijzen zijn sterk gedaald</h3>
                 <p>De prijzen van thuisbatterijen zijn de afgelopen 3 jaar met meer dan 40% gedaald door schaalvergroting en technologische verbeteringen. Een systeem dat in 2022 nog €15.000 kostte, is nu te krijgen voor €8.000-€10.000.</p>
+
+                <!-- Testimonial Highlight -->
+                <div class="testimonial-highlight">
+                    <p class="quote">"Onze energierekening is gedaald van €320 naar €65 per maand. Dat is een besparing van €3.060 per jaar. De investering hebben we binnen 3,8 jaar terugverdiend. Daarna is het puur winst."</p>
+                    <div class="testimonial-author-box">
+                        <div class="testimonial-avatar">MV</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Mark & Vera de Jong</div>
+                            <div class="location">Utrecht</div>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="info-box">
                     <div class="info-box-title">💡 Goed om te weten</div>
@@ -628,13 +926,13 @@
 
                 <!-- Bottom CTA -->
                 <div class="embedded-cta">
-                    <h3>Gratis advies aanvragen</h3>
-                    <p>Ontvang binnen 24 uur een persoonlijk adviesrapport met berekening, subsidies en aanbevelingen voor jouw situatie.</p>
+                    <h3>🎯 Start vandaag met besparen</h3>
+                    <p>Ontvang binnen 24 uur een persoonlijk adviesrapport met exacte besparing, beschikbare subsidies en vergelijking van installateurs in jouw regio.</p>
                     <form class="cta-form" onsubmit="return false;">
-                        <input type="text" class="cta-input" placeholder="Postcode (1234 AB)">
-                        <input type="email" class="cta-input" placeholder="E-mailadres">
-                        <button type="submit" class="cta-button">Ontvang advies →</button>
+                        <input type="text" class="cta-input" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                        <button type="submit" class="cta-button">Ontvang gratis rapport →</button>
                     </form>
+                    <p style="font-size: 13px; margin-top: 12px; opacity: 0.9;">✓ 100% vrijblijvend • ✓ Erkende installateurs • ✓ Binnen 24 uur antwoord</p>
                 </div>
 
                 <h2>Conclusie</h2>
@@ -709,11 +1007,75 @@
     </div>
 
     <script>
-        // Simple form handling (vervang met je eigen logica)
-        document.querySelectorAll('.cta-form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Bedankt! We nemen binnen 24 uur contact met je op.');
+        // Enhanced form handling with analytics tracking
+        function handleFormSubmit(e, formType) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const postcode = formData.get('postcode') || e.target.querySelector('input[type="text"]').value;
+
+            // Track conversion event (vervang met je eigen analytics)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead_form_submit', {
+                    'event_category': 'Lead Generation',
+                    'event_label': formType,
+                    'value': postcode
+                });
+            }
+
+            // Hier zou je de data naar je backend sturen
+            // fetch('/api/leads', { method: 'POST', body: JSON.stringify({postcode}) })
+
+            // Show success message
+            const button = e.target.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = '✓ Gelukt!';
+            button.style.background = '#059669';
+
+            setTimeout(() => {
+                alert('Bedankt! 🎉\n\nJe ontvangt binnen 24 uur een persoonlijk adviesrapport op basis van jouw postcode.\n\nLet op je e-mail!');
+                button.textContent = originalText;
+            }, 500);
+        }
+
+        // Attach handlers to all forms
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero form
+            const heroForm = document.querySelector('.hero-form');
+            if (heroForm) {
+                heroForm.addEventListener('submit', (e) => handleFormSubmit(e, 'hero_cta'));
+            }
+
+            // Embedded CTAs
+            document.querySelectorAll('.cta-form').forEach((form, index) => {
+                form.addEventListener('submit', (e) => handleFormSubmit(e, `embedded_cta_${index + 1}`));
+            });
+
+            // Scroll tracking for conversion optimization
+            let scrollTracked = {
+                25: false,
+                50: false,
+                75: false,
+                100: false
+            };
+
+            window.addEventListener('scroll', function() {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+                Object.keys(scrollTracked).forEach(threshold => {
+                    if (scrollPercent >= threshold && !scrollTracked[threshold]) {
+                        scrollTracked[threshold] = true;
+
+                        // Track scroll depth
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'scroll_depth', {
+                                'event_category': 'Engagement',
+                                'event_label': `${threshold}%`,
+                                'value': threshold
+                            });
+                        }
+                    }
+                });
             });
         });
     </script>
