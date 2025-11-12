@@ -1082,21 +1082,42 @@
 
             /* Hero value prop mobile - hidden */
             .hero-value-prop {
+                order: 999;
                 display: none;
             }
 
             /* Micro trust mobile - hidden */
             .micro-trust {
+                order: 999;
                 display: none;
             }
 
             /* Mobile mini testimonial - hidden */
             .mobile-mini-testimonial {
+                order: 999;
                 display: none;
             }
 
-            .article-intro {
+            /* Trust bar mobile */
+            .trust-bar {
+                order: 999;
+            }
+
+            /* Micro testimonial mobile */
+            .micro-testimonial {
+                order: 999;
+            }
+
+            .article-image {
                 order: 4;
+                margin-bottom: 16px;
+                border-radius: 10px;
+                max-height: 160px;
+                object-fit: cover;
+            }
+
+            .article-intro {
+                order: 5;
                 font-size: 17px;
                 line-height: 1.65;
                 margin-bottom: 8px;
@@ -1107,7 +1128,7 @@
             /* Early CTA mobile - after intro */
             .early-cta {
                 display: block;
-                order: 5;
+                order: 6;
                 padding: 18px 20px;
                 margin: 12px 0 24px;
             }
@@ -1117,14 +1138,6 @@
                 padding: 17px 24px;
                 font-size: 16px;
                 min-height: 52px;
-            }
-
-            .article-image {
-                order: 3.5;
-                margin-bottom: 16px;
-                border-radius: 10px;
-                max-height: 160px;
-                object-fit: cover;
             }
 
             .image-caption {
