@@ -807,6 +807,46 @@
                 padding-bottom: 80px;
             }
 
+            /* Reorder article elements on mobile for better visual flow */
+            .article {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .article-category {
+                order: 1;
+            }
+
+            .article-headline {
+                order: 2;
+            }
+
+            .article-image {
+                order: 3;
+                margin-bottom: 12px;
+                border-radius: 8px;
+            }
+
+            .image-caption {
+                order: 4;
+                margin-bottom: 16px;
+            }
+
+            .article-intro {
+                order: 5;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .article-meta {
+                order: 6;
+                margin-bottom: 20px;
+            }
+
+            .article-content {
+                order: 7;
+            }
+
             /* Embedded CTA mobile */
             .embedded-cta {
                 padding: 24px 20px 28px;
