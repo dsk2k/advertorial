@@ -139,75 +139,6 @@
             display: none;
         }
 
-        /* Hero CTA Banner - Mobile only, no USPs */
-        .hero-banner {
-            display: none;
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border-bottom: 3px solid var(--primary-green);
-            padding: 16px;
-        }
-
-        .hero-banner-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-banner h2 {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-
-        .hero-banner .highlight {
-            color: var(--primary-green);
-        }
-
-        .hero-banner-cta {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .hero-banner-input {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #d1d5db;
-            border-radius: 6px;
-            font-size: 16px;
-            -webkit-appearance: none;
-            appearance: none;
-            transition: all 0.2s;
-        }
-
-        .hero-banner-input:focus {
-            outline: none;
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-        }
-
-        .hero-banner-button {
-            width: 100%;
-            padding: 14px;
-            background: var(--primary-green);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            min-height: 48px;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
-            transition: all 0.2s;
-        }
-
-        .hero-banner-button:active {
-            transform: scale(0.98);
-            background: #059669;
-        }
 
         /* Mobile Sticky CTA */
         .mobile-sticky-cta {
@@ -236,12 +167,35 @@
         .mobile-sticky-content {
             max-width: 600px;
             margin: 0 auto;
-            cursor: pointer;
+        }
+
+        .mobile-sticky-form {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+        }
+
+        .mobile-sticky-input {
+            flex: 1;
+            padding: 14px 16px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #fff;
+            -webkit-appearance: none;
+            appearance: none;
+            transition: all 0.2s;
+        }
+
+        .mobile-sticky-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
 
         .mobile-sticky-button {
-            width: 100%;
-            padding: 16px 24px;
+            flex-shrink: 0;
+            padding: 14px 20px;
             background: #22c55e;
             color: #fff;
             border: none;
@@ -253,6 +207,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             letter-spacing: 0.01em;
             text-transform: none;
+            white-space: nowrap;
         }
 
         .mobile-sticky-button:active {
@@ -787,19 +742,13 @@
                 font-size: 9px;
             }
 
-            /* Hide hero banner on mobile - only sticky CTA */
-            .hero-banner {
-                display: none;
-            }
-
             /* Mobile sticky CTA - always visible */
             .mobile-sticky-cta {
                 display: block;
             }
 
-            /* Make entire sticky bar clickable */
-            .mobile-sticky-content {
-                cursor: pointer;
+            .mobile-sticky-input {
+                -webkit-tap-highlight-color: transparent;
             }
 
             /* Add padding to prevent content hiding behind sticky CTA when visible */
@@ -960,17 +909,6 @@
     <div class="advertorial-notice">
         <strong>Advertorial</strong> | Dit artikel is aangeboden door Zonnepaneel Experts
     </div>
-
-    <!-- Hero CTA Banner - Mobile only -->
-    <section class="hero-banner">
-        <div class="hero-banner-container">
-            <h2>Bespaar tot <span class="highlight">€3.060 per jaar</span> op je energierekening</h2>
-            <form class="hero-banner-cta" onsubmit="return false;">
-                <input type="text" class="hero-banner-input" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
-                <button type="submit" class="hero-banner-button">Bereken besparing →</button>
-            </form>
-        </div>
-    </section>
 
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
@@ -1171,10 +1109,13 @@
     <!-- Mobile Sticky CTA - Always visible on mobile for max conversion -->
     <div class="mobile-sticky-cta" id="mobileStickyCta">
         <button class="mobile-sticky-close" onclick="event.stopPropagation(); document.getElementById('mobileStickyCta').style.display='none'" aria-label="Sluiten">×</button>
-        <div class="mobile-sticky-content" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-            <button class="mobile-sticky-button">
-                Bereken mijn besparing
-            </button>
+        <div class="mobile-sticky-content">
+            <form class="mobile-sticky-form" onsubmit="return false;">
+                <input type="text" class="mobile-sticky-input" placeholder="Postcode (1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                <button type="submit" class="mobile-sticky-button">
+                    Bereken →
+                </button>
+            </form>
         </div>
     </div>
 
@@ -1196,10 +1137,10 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Hero banner form
-            const heroForm = document.querySelector('.hero-banner-cta');
-            if (heroForm) {
-                heroForm.addEventListener('submit', (e) => handleFormSubmit(e, 'hero'));
+            // Mobile sticky form
+            const mobileForm = document.querySelector('.mobile-sticky-form');
+            if (mobileForm) {
+                mobileForm.addEventListener('submit', (e) => handleFormSubmit(e, 'mobile'));
             }
 
             // Sidebar form
@@ -1212,34 +1153,6 @@
             document.querySelectorAll('.cta-form').forEach((form, index) => {
                 form.addEventListener('submit', (e) => handleFormSubmit(e, `embedded_${index + 1}`));
             });
-
-            // Smart hero banner - show when user scrolls back to top
-            let hasScrolledDown = false;
-            const heroBanner = document.querySelector('.hero-banner');
-            const scrollThreshold = 300; // User must scroll down at least 300px
-            const topThreshold = 50; // Show hero when within 50px of top
-
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                // Check if user has scrolled down past threshold
-                if (scrollTop > scrollThreshold) {
-                    hasScrolledDown = true;
-                }
-
-                // Only show hero banner when scrolled back to top after having scrolled down
-                if (hasScrolledDown && scrollTop <= topThreshold) {
-                    // At top of page after scrolling down
-                    if (heroBanner && window.innerWidth <= 640) {
-                        heroBanner.style.display = 'block';
-                    }
-                } else {
-                    // Not at top - hide hero banner
-                    if (heroBanner) {
-                        heroBanner.style.display = 'none';
-                    }
-                }
-            }, { passive: true });
         });
     </script>
 </body>
