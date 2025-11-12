@@ -236,50 +236,27 @@
         .mobile-sticky-content {
             max-width: 600px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .mobile-sticky-text {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .mobile-sticky-text h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin: 0 0 2px;
-            line-height: 1.2;
-        }
-
-        .mobile-sticky-text p {
-            font-size: 11px;
-            color: var(--text-gray);
-            margin: 0;
-            line-height: 1.2;
+            cursor: pointer;
         }
 
         .mobile-sticky-button {
-            padding: 14px 28px;
+            width: 100%;
+            padding: 16px 24px;
             background: #22c55e;
             color: #fff;
             border: none;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
-            white-space: nowrap;
             box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
             letter-spacing: 0.01em;
+            text-transform: none;
         }
 
         .mobile-sticky-button:active {
-            transform: scale(0.96);
+            transform: scale(0.98);
             background: #16a34a;
             box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3);
         }
@@ -1155,12 +1132,8 @@
     <div class="mobile-sticky-cta" id="mobileStickyCta">
         <button class="mobile-sticky-close" onclick="event.stopPropagation(); document.getElementById('mobileStickyCta').style.display='none'" aria-label="Sluiten">×</button>
         <div class="mobile-sticky-content" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-            <div class="mobile-sticky-text">
-                <h4>Bespaar tot €3.060 per jaar</h4>
-                <p>Bereken je besparing in 30 seconden</p>
-            </div>
             <button class="mobile-sticky-button">
-                Start nu →
+                Bereken mijn besparing
             </button>
         </div>
     </div>
