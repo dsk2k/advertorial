@@ -312,8 +312,106 @@
             font-size: 36px;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             color: var(--text-dark);
+        }
+
+        /* Hero value proposition */
+        .hero-value-prop {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .hero-value-prop strong {
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .hero-value-prop span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Micro trust badges */
+        .micro-trust {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .micro-trust-star {
+            color: #fbbf24;
+        }
+
+        /* Mobile mini testimonial */
+        .mobile-mini-testimonial {
+            display: none;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid var(--primary-green);
+            padding: 14px 16px;
+            margin: 20px 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            border-radius: 6px;
+            line-height: 1.5;
+        }
+
+        .mobile-mini-testimonial .stars {
+            color: #fbbf24;
+            font-size: 14px;
+            margin-left: 4px;
+        }
+
+        /* Early CTA - appears right after intro */
+        .early-cta {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid var(--primary-green);
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 28px 0;
+            text-align: center;
+        }
+
+        .early-cta-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        .early-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .early-cta-subtitle {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 10px;
         }
 
         /* Compact author byline under title */
@@ -1021,6 +1119,53 @@
                 order: 4;
                 margin-bottom: 16px;
                 border-radius: 10px;
+                max-height: 220px;
+                object-fit: cover;
+            }
+
+            /* Hero value prop mobile */
+            .hero-value-prop {
+                order: 2.5;
+                font-size: 13px;
+                gap: 10px;
+                margin-bottom: 14px;
+                padding: 10px 0;
+            }
+
+            .hero-value-prop strong {
+                font-size: 16px;
+            }
+
+            /* Micro trust mobile */
+            .micro-trust {
+                order: 2.6;
+                font-size: 12px;
+                gap: 10px;
+                margin-bottom: 14px;
+                flex-wrap: wrap;
+            }
+
+            /* Mobile mini testimonial - show on mobile */
+            .mobile-mini-testimonial {
+                display: block;
+                order: 6.5;
+                margin: 18px 0;
+                font-size: 14px;
+                padding: 12px 14px;
+            }
+
+            /* Early CTA mobile */
+            .early-cta {
+                order: 6.7;
+                padding: 18px 20px;
+                margin: 24px 0;
+            }
+
+            .early-cta-button {
+                width: 100%;
+                padding: 17px 24px;
+                font-size: 16px;
+                min-height: 52px;
             }
 
             .image-caption {
@@ -1292,6 +1437,22 @@
 
             <h1 class="article-headline">Zonnepanelen + thuisbatterij: wat 8 op de 10 huiseigenaren niet weten</h1>
 
+            <!-- Hero value proposition -->
+            <div class="hero-value-prop">
+                <span><strong>€3.060/jaar</strong> besparing</span>
+                <span>•</span>
+                <span><strong>Gratis</strong> advies</span>
+                <span>•</span>
+                <span><strong>2 minuten</strong></span>
+            </div>
+
+            <!-- Micro trust badges -->
+            <div class="micro-trust">
+                <span class="micro-trust-star">⭐ 4.8/5</span>
+                <span>15.427+ klanten</span>
+                <span>✓ Erkend adviseur</span>
+            </div>
+
             <!-- Compact byline -->
             <div class="article-byline">
                 <span>Door <span class="byline-author">Marcel</span></span>
@@ -1314,6 +1475,19 @@
             </div>
 
             <p class="article-intro">De zonnepanelenmarkt in Nederland staat aan de vooravond van een revolutie. Steeds meer huiseigenaren ontdekken de voordelen van het combineren van zonnepanelen met een thuisbatterij. Deze slimme combinatie helpt niet alleen om duurzame energie op te wekken, maar ook om de kosten van het terugleveren van overtollige energie aan het net te vermijden.</p>
+
+            <!-- Mobile mini testimonial -->
+            <div class="mobile-mini-testimonial">
+                "€3.060 bespaard!" - Mark D. <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+
+            <!-- Early CTA -->
+            <div class="early-cta">
+                <button class="early-cta-button" onclick="document.querySelector('.sidebar-form input').focus(); window.scrollTo({top: document.querySelector('.sidebar-cta-box').offsetTop - 100, behavior: 'smooth'})">
+                    Bereken mijn besparing →
+                </button>
+                <p class="early-cta-subtitle">Gratis adviesrapport binnen 24 uur</p>
+            </div>
 
             <!-- Micro testimonial -->
             <div class="micro-testimonial">
@@ -1357,8 +1531,8 @@
                     <h3>Bereken jouw besparing</h3>
                     <p>Vul je postcode in en ontvang een persoonlijk advies op basis van jouw situatie.</p>
                     <form class="cta-form" onsubmit="return false;">
-                        <input type="text" class="cta-input" placeholder="1234 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}">
-                        <button type="submit" class="cta-button">Ja, stuur mijn rapport →</button>
+                        <input type="text" class="cta-input" placeholder="Bijv. 1012 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                        <button type="submit" class="cta-button">Bereken mijn besparing →</button>
                     </form>
                 </div>
 
@@ -1396,11 +1570,11 @@
 
                 <!-- Bottom CTA -->
                 <div class="embedded-cta">
-                    <h3>Gratis advies aanvragen</h3>
+                    <h3>Bereken jouw besparing</h3>
                     <p>Ontvang binnen 24 uur een persoonlijk adviesrapport met berekening, subsidies en aanbevelingen voor jouw situatie.</p>
                     <form class="cta-form" onsubmit="return false;">
-                        <input type="text" class="cta-input" placeholder="Postcode (1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
-                        <button type="submit" class="cta-button">Ja, stuur mijn gratis rapport →</button>
+                        <input type="text" class="cta-input" placeholder="Bijv. 1012 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                        <button type="submit" class="cta-button">Bereken mijn besparing →</button>
                     </form>
                 </div>
 
@@ -1442,8 +1616,8 @@
                 </div>
 
                 <form class="sidebar-form" onsubmit="return false;">
-                    <input type="text" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
-                    <button type="submit" class="sidebar-form-submit">Ja, stuur mijn gratis rapport →</button>
+                    <input type="text" placeholder="Bijv. 1012 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                    <button type="submit" class="sidebar-form-submit">Bereken mijn besparing →</button>
                 </form>
                 <p class="sidebar-form-privacy">🔒 Jouw gegevens worden vertrouwelijk behandeld</p>
 
@@ -1532,7 +1706,7 @@
                 Bespaar tot <span class="mobile-sticky-value-highlight">€3.060/jaar</span> 👇
             </div>
             <form class="mobile-sticky-form" onsubmit="return false;">
-                <input type="text" class="mobile-sticky-input" placeholder="Postcode (1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                <input type="text" class="mobile-sticky-input" placeholder="1012 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
                 <button type="submit" class="mobile-sticky-button">
                     Begin met besparen →
                 </button>
