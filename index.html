@@ -155,20 +155,31 @@
             left: 0;
             right: 0;
             background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border-top: 3px solid var(--primary-green);
-            padding: 12px 16px;
-            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary-green);
+            padding: 14px 18px 16px;
+            box-shadow: 0 -6px 20px rgba(0,0,0,0.12), 0 -2px 8px rgba(16, 185, 129, 0.15);
             z-index: 1000;
-            animation: slideUp 0.3s ease-out;
+            animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         @keyframes slideUp {
             from {
                 transform: translateY(100%);
+                opacity: 0;
             }
             to {
                 transform: translateY(0);
+                opacity: 1;
             }
+        }
+
+        /* Performance optimization for animations */
+        .mobile-sticky-cta {
+            will-change: transform, opacity;
+        }
+
+        .mobile-sticky-button {
+            will-change: transform;
         }
 
         .mobile-sticky-content {
@@ -237,16 +248,23 @@
 
         .mobile-sticky-close {
             position: absolute;
-            top: 4px;
-            right: 8px;
-            background: none;
+            top: 6px;
+            right: 10px;
+            background: rgba(0,0,0,0.05);
             border: none;
             color: var(--text-gray);
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
-            padding: 4px;
+            padding: 4px 6px;
             line-height: 1;
-            opacity: 0.6;
+            opacity: 0.7;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .mobile-sticky-close:hover {
+            opacity: 1;
+            background: rgba(0,0,0,0.1);
         }
 
         /* Advertorial Badge */
@@ -456,7 +474,7 @@
         .article-intro {
             font-size: 18px;
             line-height: 1.6;
-            color: var(--text-gray);
+            color: #4a4a4a;
             margin-bottom: 24px;
             font-weight: 400;
         }
@@ -876,31 +894,24 @@
                 font-size: 20px;
             }
 
-            /* Compact USP bar on mobile */
+            /* Simplified header on mobile - reduce bulk */
+            .header-top {
+                padding: 10px 0;
+            }
+
+            /* Minimal USP bar on mobile - no animation, smaller */
             .usp-bar {
-                padding: 8px 0;
-                overflow: hidden;
+                padding: 6px 0;
+                background: linear-gradient(135deg, var(--primary-blue), #1e4a8a);
             }
 
             .usp-container {
                 display: flex;
-                flex-wrap: nowrap;
-                gap: 16px;
-                padding: 0;
-                animation: scroll-left 20s linear infinite;
-            }
-
-            .usp-container:hover {
-                animation-play-state: paused;
-            }
-
-            @keyframes scroll-left {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-50%);
-                }
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+                padding: 0 16px;
+                animation: none;
             }
 
             .usp-item {
@@ -909,14 +920,14 @@
                 flex-shrink: 0;
             }
 
-            /* Show all USP items on mobile for animation */
-            .usp-item:nth-child(n+5) {
-                display: flex;
+            /* Show only first 2 USPs on mobile */
+            .usp-item:nth-child(n+3) {
+                display: none;
             }
 
             .usp-check {
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
                 font-size: 9px;
             }
 
@@ -925,21 +936,46 @@
                 display: block;
             }
 
+            /* Add subtle pulse effect to grab attention */
+            @keyframes pulse-border {
+                0%, 100% {
+                    border-top-color: var(--primary-green);
+                }
+                50% {
+                    border-top-color: #059669;
+                }
+            }
+
+            .mobile-sticky-cta {
+                animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1), pulse-border 2s ease-in-out infinite 1s;
+            }
+
             .mobile-sticky-input {
                 -webkit-tap-highlight-color: transparent;
-                max-width: 140px;
-                padding: 14px 12px;
+                max-width: 130px;
+                padding: 16px 14px;
                 font-size: 15px;
+                border: 2px solid #10b981;
+                font-weight: 500;
             }
 
             .mobile-sticky-button {
-                padding: 14px 16px;
+                padding: 16px 18px;
                 font-size: 15px;
+                font-weight: 700;
+                background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+                box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+            }
+
+            .mobile-sticky-value {
+                font-size: 14px;
+                font-weight: 700;
+                margin-bottom: 12px;
             }
 
             /* Add padding to prevent content hiding behind sticky CTA when visible */
             body {
-                padding-bottom: 80px;
+                padding-bottom: 90px;
             }
 
             /* Reorder article elements on mobile for better visual flow */
@@ -954,19 +990,22 @@
 
             .article-headline {
                 order: 2;
-                font-size: 24px;
-                margin-bottom: 10px;
+                font-size: 26px;
+                line-height: 1.25;
+                margin-bottom: 12px;
+                letter-spacing: -0.02em;
             }
 
             .article-byline {
                 order: 3;
-                margin-bottom: 14px;
+                margin-bottom: 16px;
+                font-size: 13px;
             }
 
             .article-image {
                 order: 4;
-                margin-bottom: 12px;
-                border-radius: 8px;
+                margin-bottom: 16px;
+                border-radius: 10px;
             }
 
             .image-caption {
@@ -976,8 +1015,11 @@
 
             .article-intro {
                 order: 6;
-                font-size: 16px;
-                margin-bottom: 20px;
+                font-size: 17px;
+                line-height: 1.65;
+                margin-bottom: 24px;
+                color: var(--text-dark);
+                font-weight: 500;
             }
 
             .article-meta {
@@ -987,23 +1029,53 @@
 
             .article-content {
                 order: 8;
+                font-size: 16px;
+                line-height: 1.75;
+            }
+
+            .article-content p {
+                margin-bottom: 18px;
+            }
+
+            .article-content h2 {
+                font-size: 22px;
+                margin: 28px 0 14px;
+                line-height: 1.3;
+                letter-spacing: -0.01em;
+            }
+
+            .article-content h3 {
+                font-size: 18px;
+                margin: 22px 0 12px;
+                line-height: 1.4;
+            }
+
+            .article-content ul {
+                margin: 16px 0 18px 20px;
+            }
+
+            .article-content li {
+                margin-bottom: 10px;
+                line-height: 1.6;
             }
 
             /* Embedded CTA mobile */
             .embedded-cta {
-                padding: 24px 20px 28px;
-                border-radius: 10px;
-                margin: 32px -4px;
+                padding: 26px 22px 30px;
+                border-radius: 12px;
+                margin: 36px 0;
             }
 
             .embedded-cta h3 {
-                font-size: 22px;
-                line-height: 1.4;
+                font-size: 23px;
+                line-height: 1.3;
+                letter-spacing: -0.01em;
             }
 
             .embedded-cta p {
-                font-size: 14px;
+                font-size: 15px;
                 margin-bottom: 20px;
+                line-height: 1.6;
             }
 
             .cta-form {
@@ -1022,10 +1094,27 @@
 
             .cta-button {
                 width: 100%;
-                min-height: 48px;
-                padding: 16px;
-                font-size: 16px;
+                min-height: 52px;
+                padding: 17px 24px;
+                font-size: 17px;
+                font-weight: 700;
                 -webkit-tap-highlight-color: transparent;
+                background: linear-gradient(135deg, var(--primary-green) 0%, #059669 100%);
+                box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+            }
+
+            /* Info box mobile */
+            .info-box {
+                padding: 18px;
+                margin: 28px 0;
+                font-size: 14px;
+                line-height: 1.65;
+                border-radius: 8px;
+            }
+
+            .info-box-title {
+                font-size: 16px;
+                margin-bottom: 10px;
             }
 
             /* Mobile-first touch targets */
@@ -1039,7 +1128,12 @@
 
             /* Sidebar CTA mobile */
             .sidebar-cta-box {
-                padding: 20px 16px;
+                padding: 22px 18px;
+                margin-bottom: 20px;
+            }
+
+            .sidebar-cta-box h3 {
+                font-size: 19px;
             }
 
             .sidebar-form input {
@@ -1070,36 +1164,39 @@
                 font-size: 12px;
             }
 
-            /* Trust bar mobile */
+            /* Trust bar mobile - hidden */
             .trust-bar {
-                gap: 12px;
-                font-size: 12px;
+                display: none;
             }
 
-            .trust-stars {
-                font-size: 14px;
-            }
-
-            .trust-badge {
-                font-size: 10px;
-                padding: 3px 8px;
-            }
-
-            /* Micro testimonial mobile */
+            /* Micro testimonial mobile - hidden */
             .micro-testimonial {
-                padding: 14px 16px;
-                font-size: 14px;
-                margin: 16px -4px 20px;
-            }
-
-            .testimonial-author {
-                font-size: 12px;
+                display: none;
             }
 
             /* Urgency banner mobile */
             .urgency-banner {
-                font-size: 12px;
-                padding: 8px 12px;
+                font-size: 13px;
+                padding: 10px 14px;
+                font-weight: 700;
+                border-radius: 8px;
+            }
+
+            .urgency-icon {
+                font-size: 18px;
+            }
+
+            /* Main container mobile */
+            .main-container {
+                padding: 0 18px;
+                margin-top: 16px;
+            }
+
+            /* Article category badge */
+            .article-category {
+                font-size: 11px;
+                padding: 5px 12px;
+                font-weight: 700;
             }
         }
     </style>
@@ -1287,8 +1384,7 @@
                     <h3>Gratis advies aanvragen</h3>
                     <p>Ontvang binnen 24 uur een persoonlijk adviesrapport met berekening, subsidies en aanbevelingen voor jouw situatie.</p>
                     <form class="cta-form" onsubmit="return false;">
-                        <input type="text" class="cta-input" placeholder="Postcode (1234 AB)">
-                        <input type="email" class="cta-input" placeholder="E-mailadres">
+                        <input type="text" class="cta-input" placeholder="Postcode (1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
                         <button type="submit" class="cta-button">Ja, stuur mijn gratis rapport →</button>
                     </form>
                 </div>
