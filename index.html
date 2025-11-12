@@ -815,9 +815,14 @@
                 display: none;
             }
 
-            /* Mobile sticky CTA - hidden by default, shown via JavaScript */
+            /* Mobile sticky CTA - always visible */
             .mobile-sticky-cta {
-                display: none;
+                display: block;
+            }
+
+            /* Make entire sticky bar clickable */
+            .mobile-sticky-content {
+                cursor: pointer;
             }
 
             /* Add padding to prevent content hiding behind sticky CTA when visible */
@@ -1148,13 +1153,13 @@
 
     <!-- Mobile Sticky CTA - Always visible on mobile for max conversion -->
     <div class="mobile-sticky-cta" id="mobileStickyCta">
-        <button class="mobile-sticky-close" onclick="document.getElementById('mobileStickyCta').style.display='none'" aria-label="Sluiten">×</button>
-        <div class="mobile-sticky-content">
+        <button class="mobile-sticky-close" onclick="event.stopPropagation(); document.getElementById('mobileStickyCta').style.display='none'" aria-label="Sluiten">×</button>
+        <div class="mobile-sticky-content" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
             <div class="mobile-sticky-text">
                 <h4>Bespaar tot €3.060 per jaar</h4>
                 <p>Bereken je besparing in 30 seconden</p>
             </div>
-            <button class="mobile-sticky-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <button class="mobile-sticky-button">
                 Start nu →
             </button>
         </div>
@@ -1195,11 +1200,11 @@
                 form.addEventListener('submit', (e) => handleFormSubmit(e, `embedded_${index + 1}`));
             });
 
-            // Smart sticky CTA - only show when scrolling back up after scrolling down
-            let lastScrollTop = 0;
+            // Smart hero banner - show when user scrolls back to top
             let hasScrolledDown = false;
-            const stickyCta = document.getElementById('mobileStickyCta');
+            const heroBanner = document.querySelector('.hero-banner');
             const scrollThreshold = 300; // User must scroll down at least 300px
+            const topThreshold = 50; // Show hero when within 50px of top
 
             window.addEventListener('scroll', function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1209,20 +1214,18 @@
                     hasScrolledDown = true;
                 }
 
-                // Only show CTA when scrolling up after having scrolled down
-                if (hasScrolledDown && scrollTop < lastScrollTop) {
-                    // Scrolling up
-                    if (stickyCta && window.innerWidth <= 640) {
-                        stickyCta.style.display = 'block';
+                // Only show hero banner when scrolled back to top after having scrolled down
+                if (hasScrolledDown && scrollTop <= topThreshold) {
+                    // At top of page after scrolling down
+                    if (heroBanner && window.innerWidth <= 640) {
+                        heroBanner.style.display = 'block';
                     }
-                } else if (scrollTop > lastScrollTop) {
-                    // Scrolling down - hide CTA
-                    if (stickyCta) {
-                        stickyCta.style.display = 'none';
+                } else {
+                    // Not at top - hide hero banner
+                    if (heroBanner) {
+                        heroBanner.style.display = 'none';
                     }
                 }
-
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, { passive: true });
         });
     </script>
