@@ -129,14 +129,108 @@
             font-weight: 400;
         }
 
-        /* Advertorial Label */
+        /* Advertorial Label - Hidden */
         .advertorial-notice {
-            background: #fff3cd;
-            border-bottom: 1px solid #ffc107;
-            padding: 8px 0;
-            text-align: center;
+            display: none;
+        }
+
+        /* Hero CTA Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-bottom: 3px solid var(--primary-green);
+            padding: 16px 0;
+        }
+
+        .hero-banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .hero-banner-content {
+            flex: 1;
+        }
+
+        .hero-banner-content h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .hero-banner-content .highlight {
+            color: var(--primary-green);
+        }
+
+        .hero-banner-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        .hero-banner-cta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-banner-input {
+            width: 200px;
+            padding: 12px 16px;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .hero-banner-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .hero-banner-button {
+            padding: 12px 24px;
+            background: var(--primary-green);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+        }
+
+        .hero-banner-button:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .hero-banner-trust {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
             font-size: 12px;
-            color: #856404;
+            color: var(--text-gray);
+        }
+
+        .hero-trust-item .check {
+            color: var(--primary-green);
+            font-weight: 700;
         }
 
         /* Breadcrumbs */
@@ -295,7 +389,7 @@
         .embedded-cta {
             background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
             border: 2px solid var(--primary-green);
-            padding: 36px 32px;
+            padding: 28px 32px 36px;
             border-radius: 12px;
             margin: 40px 0;
             box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
@@ -309,7 +403,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(90deg, var(--primary-green), #059669);
         }
 
@@ -416,11 +510,213 @@
             color: #1565c0;
         }
 
+        /* Mobile Sticky CTA - Always visible on mobile for conversion */
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-top: 3px solid var(--primary-green);
+            padding: 12px 16px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-sticky-content {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .mobile-sticky-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mobile-sticky-text h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 2px;
+            line-height: 1.2;
+        }
+
+        .mobile-sticky-text p {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .mobile-sticky-button {
+            padding: 12px 20px;
+            background: var(--primary-green);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .mobile-sticky-button:active {
+            transform: scale(0.95);
+            background: #059669;
+        }
+
+        .mobile-sticky-close {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+            opacity: 0.6;
+        }
+
+        /* Advertorial Badge */
+        .advertorial-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid #ffeaa7;
+            margin-left: 8px;
+        }
+
         /* Sidebar */
         .sidebar {
             position: sticky;
             top: 20px;
             height: fit-content;
+        }
+
+        /* Sidebar CTA Form */
+        .sidebar-cta-box {
+            background: #fff;
+            border: 2px solid var(--primary-green);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+        }
+
+        .sidebar-cta-box h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .sidebar-cta-box .subtitle {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+
+        .sidebar-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .sidebar-form input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .sidebar-form-submit {
+            width: 100%;
+            padding: 13px;
+            background: var(--primary-green);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .sidebar-form-submit:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+
+        .sidebar-form-privacy {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin-top: 8px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .sidebar-trust-indicators {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .sidebar-trust-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .sidebar-trust-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .sidebar-trust-label {
+            font-size: 10px;
+            color: var(--text-gray);
+            display: block;
+            margin-top: 2px;
         }
 
         .sidebar-section {
@@ -519,14 +815,82 @@
         }
 
         @media (max-width: 640px) {
+            /* Mobile-first improvements */
+            body {
+                -webkit-text-size-adjust: 100%;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /* Header mobile optimization */
+            .logo {
+                font-size: 20px;
+            }
+
+            .search-btn,
+            .login-btn {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 12px;
+            }
+
+            /* USP Bar mobile */
+            .usp-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+
+            .usp-item {
+                font-size: 11px;
+            }
+
+            .usp-check {
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+            }
+
+            /* Article mobile */
+            .main-container {
+                padding: 0 16px;
+                margin-top: 16px;
+            }
+
+            .article-headline {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            .article-intro {
+                font-size: 16px;
+            }
+
+            .article-content {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .article-content h2 {
+                font-size: 20px;
+                margin: 24px 0 12px;
+            }
+
+            .article-content h3 {
+                font-size: 18px;
+                margin: 20px 0 10px;
+            }
+
+            /* CTA boxes mobile */
             .embedded-cta {
-                padding: 28px 20px;
+                padding: 24px 16px 28px;
                 border-radius: 10px;
-                margin: 32px 0;
+                margin: 32px -4px;
             }
 
             .embedded-cta h3 {
-                font-size: 22px;
+                font-size: 20px;
+                line-height: 1.4;
             }
 
             .embedded-cta p {
@@ -542,33 +906,145 @@
             .cta-input {
                 width: 100%;
                 min-width: 0;
-                padding: 14px 16px;
+                padding: 16px;
+                font-size: 16px;
+                -webkit-appearance: none;
+                appearance: none;
             }
 
             .cta-button {
                 width: 100%;
+                min-height: 48px;
                 padding: 16px;
-                font-size: 15px;
+                font-size: 16px;
+                -webkit-tap-highlight-color: transparent;
             }
 
-            .logo {
-                font-size: 20px;
+            /* Sidebar mobile - now inline */
+            .sidebar {
+                margin-top: 32px;
             }
 
-            .usp-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
+            .sidebar-cta-box {
+                padding: 20px 16px;
             }
 
-            .usp-item {
+            .sidebar-form input {
+                padding: 16px;
+                font-size: 16px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            .sidebar-form-submit {
+                min-height: 48px;
+                padding: 16px;
+                font-size: 16px;
+            }
+
+            /* Info box mobile */
+            .info-box {
+                padding: 16px;
+                margin: 20px -4px;
+                font-size: 14px;
+            }
+
+            /* Improved touch targets */
+            a, button, input, select {
+                touch-action: manipulation;
+            }
+
+            /* Better spacing on mobile */
+            .article-meta {
+                padding: 12px 0;
+            }
+
+            .author-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .author-name {
+                font-size: 13px;
+            }
+
+            .article-timestamp {
                 font-size: 11px;
             }
 
-            .usp-check {
-                width: 18px;
-                height: 18px;
-                font-size: 10px;
+            /* Sidebar sections mobile */
+            .sidebar-section {
+                border-radius: 6px;
+            }
+
+            .sidebar-link {
+                padding: 14px;
+            }
+
+            .sidebar-title {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            /* Show sticky CTA on mobile */
+            .mobile-sticky-cta {
+                display: block;
+            }
+
+            /* Add padding to body to prevent content from being hidden behind sticky CTA */
+            body {
+                padding-bottom: 80px;
+            }
+
+            /* Hero banner mobile */
+            .hero-banner {
+                padding: 12px 0;
+            }
+
+            .hero-banner-container {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+
+            .hero-banner-content h2 {
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+
+            .hero-banner-content p {
+                font-size: 13px;
+            }
+
+            .hero-banner-trust {
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 6px;
+            }
+
+            .hero-trust-item {
+                font-size: 11px;
+            }
+
+            .hero-banner-cta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-banner-input {
+                width: 100%;
+                padding: 14px;
+                font-size: 16px;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            .hero-banner-button {
+                width: 100%;
+                padding: 14px;
+                font-size: 16px;
+                min-height: 48px;
             }
         }
     </style>
@@ -619,6 +1095,34 @@
         <strong>Advertorial</strong> | Dit artikel is aangeboden door Zonnepaneel Experts
     </div>
 
+    <!-- Hero CTA Banner -->
+    <section class="hero-banner">
+        <div class="hero-banner-container">
+            <div class="hero-banner-content">
+                <h2>Bespaar tot <span class="highlight">€3.060 per jaar</span> op je energierekening</h2>
+                <p>Ontvang gratis advies van erkende installateurs</p>
+                <div class="hero-banner-trust">
+                    <div class="hero-trust-item">
+                        <span class="check">✓</span>
+                        <span>100% vrijblijvend</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <span class="check">✓</span>
+                        <span>15.427 tevreden klanten</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <span class="check">✓</span>
+                        <span>Binnen 24 uur advies</span>
+                    </div>
+                </div>
+            </div>
+            <form class="hero-banner-cta" onsubmit="return false;">
+                <input type="text" class="hero-banner-input" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                <button type="submit" class="hero-banner-button">Bereken besparing →</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
         <a href="#">Home</a> › <a href="#">Economie</a> › <a href="#">Energie</a> › Zonnepanelen + thuisbatterij 2025
@@ -638,7 +1142,7 @@
             <div class="article-meta">
                 <div class="author-avatar">MH</div>
                 <div class="author-info">
-                    <div class="author-name">Marcel Hagedoorn</div>
+                    <div class="author-name">Marcel Hagedoorn <span class="advertorial-badge">Advertorial</span></div>
                     <div class="article-timestamp">12 november 2025, 10:00 • Laatste update: 10:33 • Leestijd: 8 minuten</div>
                 </div>
             </div>
@@ -728,6 +1232,32 @@
 
         <!-- Sidebar -->
         <aside class="sidebar">
+            <!-- CTA Form Box -->
+            <div class="sidebar-cta-box">
+                <h3>Ontvang gratis advies</h3>
+                <p class="subtitle">Vul je postcode in voor een persoonlijk adviesrapport</p>
+                <form class="sidebar-form" onsubmit="return false;">
+                    <input type="text" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
+                    <button type="submit" class="sidebar-form-submit">Bereken mijn besparing →</button>
+                </form>
+                <p class="sidebar-form-privacy">🔒 Jouw gegevens worden vertrouwelijk behandeld</p>
+
+                <div class="sidebar-trust-indicators">
+                    <div class="sidebar-trust-item">
+                        <span class="sidebar-trust-number">15.427</span>
+                        <span class="sidebar-trust-label">Tevreden klanten</span>
+                    </div>
+                    <div class="sidebar-trust-item">
+                        <span class="sidebar-trust-number">4.8/5</span>
+                        <span class="sidebar-trust-label">Score</span>
+                    </div>
+                    <div class="sidebar-trust-item">
+                        <span class="sidebar-trust-number">100%</span>
+                        <span class="sidebar-trust-label">Gratis</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Lees ook -->
             <div class="sidebar-section">
                 <div class="sidebar-header">📰 Lees ook</div>
@@ -789,12 +1319,53 @@
         </aside>
     </div>
 
+    <!-- Mobile Sticky CTA - Always visible on mobile for max conversion -->
+    <div class="mobile-sticky-cta" id="mobileStickyCta">
+        <button class="mobile-sticky-close" onclick="document.getElementById('mobileStickyCta').style.display='none'" aria-label="Sluiten">×</button>
+        <div class="mobile-sticky-content">
+            <div class="mobile-sticky-text">
+                <h4>Bespaar tot €3.060 per jaar</h4>
+                <p>Bereken je besparing in 30 seconden</p>
+            </div>
+            <button class="mobile-sticky-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                Start nu →
+            </button>
+        </div>
+    </div>
+
     <script>
-        // Simple form handling (vervang met je eigen logica)
-        document.querySelectorAll('.cta-form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Bedankt! We nemen binnen 24 uur contact met je op.');
+        // Enhanced form handling
+        function handleFormSubmit(e, formType) {
+            e.preventDefault();
+            const button = e.target.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+
+            button.textContent = '✓ Gelukt!';
+            button.style.background = '#059669';
+
+            setTimeout(() => {
+                alert('Bedankt! 🎉\n\nJe ontvangt binnen 24 uur een persoonlijk adviesrapport.\n\nLet op je e-mail!');
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero banner form
+            const heroForm = document.querySelector('.hero-banner-cta');
+            if (heroForm) {
+                heroForm.addEventListener('submit', (e) => handleFormSubmit(e, 'hero'));
+            }
+
+            // Sidebar form
+            const sidebarForm = document.querySelector('.sidebar-form');
+            if (sidebarForm) {
+                sidebarForm.addEventListener('submit', (e) => handleFormSubmit(e, 'sidebar'));
+            }
+
+            // Embedded CTAs
+            document.querySelectorAll('.cta-form').forEach((form, index) => {
+                form.addEventListener('submit', (e) => handleFormSubmit(e, `embedded_${index + 1}`));
             });
         });
     </script>
