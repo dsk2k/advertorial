@@ -346,9 +346,42 @@
             margin-left: 4px;
         }
 
-        /* Early CTA - hidden */
+        /* Early CTA - visible on desktop */
         .early-cta {
-            display: none;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid var(--primary-green);
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 28px 0;
+            text-align: center;
+        }
+
+        .early-cta-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        .early-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .early-cta-subtitle {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 10px;
         }
 
         /* Compact author byline under title */
@@ -1062,12 +1095,21 @@
                 display: none;
             }
 
-            /* Early CTA mobile - show above image */
+            .article-intro {
+                order: 4;
+                font-size: 17px;
+                line-height: 1.65;
+                margin-bottom: 24px;
+                color: var(--text-dark);
+                font-weight: 500;
+            }
+
+            /* Early CTA mobile - after intro */
             .early-cta {
                 display: block;
-                order: 3.5;
+                order: 5;
                 padding: 18px 20px;
-                margin: 20px 0;
+                margin: 24px 0;
             }
 
             .early-cta-button {
@@ -1078,7 +1120,7 @@
             }
 
             .article-image {
-                order: 4;
+                order: 6;
                 margin-bottom: 16px;
                 border-radius: 10px;
                 max-height: 220px;
@@ -1086,21 +1128,12 @@
             }
 
             .image-caption {
-                order: 5;
+                order: 7;
                 margin-bottom: 16px;
             }
 
-            .article-intro {
-                order: 6;
-                font-size: 17px;
-                line-height: 1.65;
-                margin-bottom: 24px;
-                color: var(--text-dark);
-                font-weight: 500;
-            }
-
             .article-meta {
-                order: 7;
+                order: 7.5;
                 display: none;
             }
 
