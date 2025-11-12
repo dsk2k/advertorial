@@ -815,12 +815,12 @@
                 display: none;
             }
 
-            /* Show mobile sticky CTA */
+            /* Mobile sticky CTA - hidden by default, shown via JavaScript */
             .mobile-sticky-cta {
-                display: block;
+                display: none;
             }
 
-            /* Add padding to prevent content hiding behind sticky CTA */
+            /* Add padding to prevent content hiding behind sticky CTA when visible */
             body {
                 padding-bottom: 80px;
             }
@@ -961,9 +961,9 @@
         <article class="article">
             <span class="article-category">Energiebesparing</span>
 
-            <h1 class="article-headline">Met 67 jaar en 3 maanden met pensioen blijft nog wel even, want heel veel ouder worden we niet meer</h1>
+            <h1 class="article-headline">Zonnepanelen + thuisbatterij: wat 8 op de 10 huiseigenaren niet weten</h1>
 
-            <p class="article-intro">Het verwachte aantal levensjaren van een 65-jarige blijft dalen en is bijna weer zo laag dat de pensioenleeftijd terug naar 67 jaar zou moeten. Maar er is goed nieuws voor huiseigenaren: energiekosten dalen drastisch met de juiste investeringen.</p>
+            <p class="article-intro">De zonnepanelenmarkt in Nederland staat aan de vooravond van een revolutie. Steeds meer huiseigenaren ontdekken de voordelen van het combineren van zonnepanelen met een thuisbatterij. Deze slimme combinatie helpt niet alleen om duurzame energie op te wekken, maar ook om de kosten van het terugleveren van overtollige energie aan het net te vermijden.</p>
 
             <!-- Author Meta -->
             <div class="article-meta">
@@ -1194,6 +1194,36 @@
             document.querySelectorAll('.cta-form').forEach((form, index) => {
                 form.addEventListener('submit', (e) => handleFormSubmit(e, `embedded_${index + 1}`));
             });
+
+            // Smart sticky CTA - only show when scrolling back up after scrolling down
+            let lastScrollTop = 0;
+            let hasScrolledDown = false;
+            const stickyCta = document.getElementById('mobileStickyCta');
+            const scrollThreshold = 300; // User must scroll down at least 300px
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Check if user has scrolled down past threshold
+                if (scrollTop > scrollThreshold) {
+                    hasScrolledDown = true;
+                }
+
+                // Only show CTA when scrolling up after having scrolled down
+                if (hasScrolledDown && scrollTop < lastScrollTop) {
+                    // Scrolling up
+                    if (stickyCta && window.innerWidth <= 640) {
+                        stickyCta.style.display = 'block';
+                    }
+                } else if (scrollTop > lastScrollTop) {
+                    // Scrolling down - hide CTA
+                    if (stickyCta) {
+                        stickyCta.style.display = 'none';
+                    }
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, { passive: true });
         });
     </script>
 </body>
