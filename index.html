@@ -223,6 +223,18 @@
             box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3);
         }
 
+        .mobile-sticky-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .mobile-sticky-value-highlight {
+            color: var(--primary-green);
+        }
+
         .mobile-sticky-close {
             position: absolute;
             top: 4px;
@@ -316,6 +328,129 @@
             font-weight: 700;
             text-transform: uppercase;
             border: 1px solid #ffeaa7;
+        }
+
+        /* Trust bar */
+        .trust-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+
+        .trust-stars {
+            color: #fbbf24;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .trust-rating {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .trust-count {
+            color: var(--text-gray);
+        }
+
+        .trust-badge {
+            background: #10b981;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Micro testimonial */
+        .micro-testimonial {
+            background: #f9fafb;
+            border-left: 4px solid var(--primary-green);
+            padding: 16px 20px;
+            margin: 20px 0 24px;
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        /* What happens next */
+        .process-steps {
+            display: flex;
+            gap: 16px;
+            margin: 16px 0 20px;
+            padding: 16px;
+            background: #f0fdf4;
+            border-radius: 8px;
+        }
+
+        .process-step {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .step-number {
+            background: var(--primary-green);
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        .step-text strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Urgency element */
+        .urgency-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #fbbf24;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        .urgency-icon {
+            font-size: 16px;
         }
 
         .article-intro {
@@ -919,6 +1054,53 @@
                 padding: 16px;
                 font-size: 16px;
             }
+
+            /* Process steps mobile */
+            .process-steps {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .process-step {
+                align-items: center;
+            }
+
+            .step-text {
+                font-size: 12px;
+            }
+
+            /* Trust bar mobile */
+            .trust-bar {
+                gap: 12px;
+                font-size: 12px;
+            }
+
+            .trust-stars {
+                font-size: 14px;
+            }
+
+            .trust-badge {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+
+            /* Micro testimonial mobile */
+            .micro-testimonial {
+                padding: 14px 16px;
+                font-size: 14px;
+                margin: 16px -4px 20px;
+            }
+
+            .testimonial-author {
+                font-size: 12px;
+            }
+
+            /* Urgency banner mobile */
+            .urgency-banner {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
@@ -1005,7 +1187,27 @@
                 <span class="byline-ad-badge">Advertorial</span>
             </div>
 
+            <!-- Trust bar -->
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <span class="trust-stars">★★★★★</span>
+                    <span class="trust-rating">4.8/5</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-count">15.427+ tevreden klanten</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-badge">✓ Erkend adviseur</span>
+                </div>
+            </div>
+
             <p class="article-intro">De zonnepanelenmarkt in Nederland staat aan de vooravond van een revolutie. Steeds meer huiseigenaren ontdekken de voordelen van het combineren van zonnepanelen met een thuisbatterij. Deze slimme combinatie helpt niet alleen om duurzame energie op te wekken, maar ook om de kosten van het terugleveren van overtollige energie aan het net te vermijden.</p>
+
+            <!-- Micro testimonial -->
+            <div class="micro-testimonial">
+                "Dankzij dit advies besparen we nu €3.060 per jaar op onze energierekening. De investering hebben we in minder dan 4 jaar terugverdiend!"
+                <div class="testimonial-author">— Mark & Vera de Jong, Utrecht</div>
+            </div>
 
             <!-- Author Meta -->
             <div class="article-meta">
@@ -1044,7 +1246,7 @@
                     <p>Vul je postcode in en ontvang een persoonlijk advies op basis van jouw situatie.</p>
                     <form class="cta-form" onsubmit="return false;">
                         <input type="text" class="cta-input" placeholder="1234 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}">
-                        <button type="submit" class="cta-button">Bereken →</button>
+                        <button type="submit" class="cta-button">Ja, stuur mijn rapport →</button>
                     </form>
                 </div>
 
@@ -1087,7 +1289,7 @@
                     <form class="cta-form" onsubmit="return false;">
                         <input type="text" class="cta-input" placeholder="Postcode (1234 AB)">
                         <input type="email" class="cta-input" placeholder="E-mailadres">
-                        <button type="submit" class="cta-button">Ontvang advies →</button>
+                        <button type="submit" class="cta-button">Ja, stuur mijn gratis rapport →</button>
                     </form>
                 </div>
 
@@ -1103,11 +1305,34 @@
         <aside class="sidebar">
             <!-- CTA Form Box -->
             <div class="sidebar-cta-box">
+                <!-- Urgency banner -->
+                <div class="urgency-banner">
+                    <span class="urgency-icon">⏰</span>
+                    <span>Subsidie ISDE eindigt over 47 dagen</span>
+                </div>
+
                 <h3>Ontvang gratis advies</h3>
                 <p class="subtitle">Vul je postcode in voor een persoonlijk adviesrapport</p>
+
+                <!-- Process steps -->
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text"><strong>Postcode</strong>30 sec</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text"><strong>Rapport</strong>24 uur</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text"><strong>Advies</strong>Gratis</div>
+                    </div>
+                </div>
+
                 <form class="sidebar-form" onsubmit="return false;">
                     <input type="text" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
-                    <button type="submit" class="sidebar-form-submit">Bereken mijn besparing →</button>
+                    <button type="submit" class="sidebar-form-submit">Ja, stuur mijn gratis rapport →</button>
                 </form>
                 <p class="sidebar-form-privacy">🔒 Jouw gegevens worden vertrouwelijk behandeld</p>
 
@@ -1192,6 +1417,9 @@
     <div class="mobile-sticky-cta" id="mobileStickyCta">
         <button class="mobile-sticky-close" onclick="event.stopPropagation(); document.getElementById('mobileStickyCta').style.display='none'" aria-label="Sluiten">×</button>
         <div class="mobile-sticky-content">
+            <div class="mobile-sticky-value">
+                Bespaar tot <span class="mobile-sticky-value-highlight">€3.060/jaar</span> 👇
+            </div>
             <form class="mobile-sticky-form" onsubmit="return false;">
                 <input type="text" class="mobile-sticky-input" placeholder="Postcode (1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
                 <button type="submit" class="mobile-sticky-button">
