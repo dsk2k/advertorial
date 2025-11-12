@@ -91,12 +91,12 @@
         .usp-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 32px;
-            flex-wrap: nowrap;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
         /* Hide duplicate USPs on desktop */
@@ -109,7 +109,9 @@
             align-items: center;
             gap: 8px;
             color: #fff;
-            font-size: 13px;
+            font-size: 14px;
+            flex: 1 1 auto;
+            min-width: 200px;
         }
 
         .usp-check {
@@ -290,7 +292,7 @@
             color: var(--text-gray);
             margin-bottom: 16px;
             padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             display: flex;
             align-items: center;
             gap: 8px;
