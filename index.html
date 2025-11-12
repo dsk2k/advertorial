@@ -275,8 +275,37 @@
             font-size: 36px;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: var(--text-dark);
+        }
+
+        /* Compact author byline under title */
+        .article-byline {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .byline-author {
+            color: var(--text-dark);
+        }
+
+        .byline-separator {
+            color: var(--text-light);
+        }
+
+        .byline-ad-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid #ffeaa7;
         }
 
         .article-intro {
@@ -784,32 +813,39 @@
 
             .article-headline {
                 order: 2;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .article-byline {
+                order: 3;
+                margin-bottom: 14px;
             }
 
             .article-image {
-                order: 3;
+                order: 4;
                 margin-bottom: 12px;
                 border-radius: 8px;
             }
 
             .image-caption {
-                order: 4;
+                order: 5;
                 margin-bottom: 16px;
             }
 
             .article-intro {
-                order: 5;
+                order: 6;
                 font-size: 16px;
                 margin-bottom: 20px;
             }
 
             .article-meta {
-                order: 6;
-                margin-bottom: 20px;
+                order: 7;
+                display: none;
             }
 
             .article-content {
-                order: 7;
+                order: 8;
             }
 
             /* Embedded CTA mobile */
@@ -955,6 +991,13 @@
             <span class="article-category">Energiebesparing</span>
 
             <h1 class="article-headline">Zonnepanelen + thuisbatterij: wat 8 op de 10 huiseigenaren niet weten</h1>
+
+            <!-- Compact byline -->
+            <div class="article-byline">
+                <span>Door <span class="byline-author">Marcel</span></span>
+                <span class="byline-separator">•</span>
+                <span class="byline-ad-badge">Advertorial</span>
+            </div>
 
             <p class="article-intro">De zonnepanelenmarkt in Nederland staat aan de vooravond van een revolutie. Steeds meer huiseigenaren ontdekken de voordelen van het combineren van zonnepanelen met een thuisbatterij. Deze slimme combinatie helpt niet alleen om duurzame energie op te wekken, maar ook om de kosten van het terugleveren van overtollige energie aan het net te vermijden.</p>
 
