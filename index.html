@@ -93,10 +93,15 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 32px;
+            flex-wrap: nowrap;
+        }
+
+        /* Hide duplicate USPs on desktop */
+        .usp-item:nth-child(n+5) {
+            display: none;
         }
 
         .usp-item {
@@ -771,6 +776,11 @@
                 font-size: 11px;
                 white-space: nowrap;
                 flex-shrink: 0;
+            }
+
+            /* Show all USP items on mobile for animation */
+            .usp-item:nth-child(n+5) {
+                display: flex;
             }
 
             .usp-check {
