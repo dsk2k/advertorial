@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Met 67 jaar en 3 maanden met pensioen blijft nog wel even - Energienieuws</title>
+    <meta name="description" content="Het verwachte aantal levensjaren blijft dalen. Maar voor veel huiseigenaren is er goed nieuws: bespaar tot 85% op je energierekening.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #e30613;
+            --primary-blue: #2c5aa0;
+            --primary-green: #10b981;
+            --text-dark: #1a1a1a;
+            --text-gray: #666;
+            --text-light: #999;
+            --bg-light: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #fff;
+        }
+
+        /* Header */
+        .site-header {
+            background: var(--primary-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-btn,
+        .login-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .login-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* USP Bar */
+        .usp-bar {
+            background: var(--primary-blue);
+            padding: 10px 0;
+        }
+
+        .usp-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .usp-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .usp-check {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .usp-text strong {
+            font-weight: 700;
+        }
+
+        .usp-text {
+            font-weight: 400;
+        }
+
+        /* Advertorial Label */
+        .advertorial-notice {
+            background: #fff3cd;
+            border-bottom: 1px solid #ffc107;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #856404;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .breadcrumbs a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* Article */
+        .article {
+            background: #fff;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--primary-red);
+            color: #fff;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .article-headline {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .article-intro {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        /* Article Meta */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .article-timestamp {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Hero Image */
+        .article-image {
+            width: 100%;
+            margin-bottom: 16px;
+            border-radius: 4px;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+        }
+
+        .article-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 32px 0 16px;
+            color: var(--text-dark);
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 24px 0 12px;
+            color: var(--text-dark);
+        }
+
+        .article-content ul {
+            margin: 16px 0 20px 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Embedded CTA Box */
+        .embedded-cta {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 32px 0;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .embedded-cta h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .embedded-cta p {
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 4px;
+            font-size: 15px;
+            background: rgba(255,255,255,0.95);
+        }
+
+        .cta-button {
+            padding: 14px 32px;
+            background: #fff;
+            color: #059669;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 24px 0;
+            font-size: 15px;
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1565c0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .sidebar-section {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            background: var(--bg-light);
+            padding: 12px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-item:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: background 0.2s;
+        }
+
+        .sidebar-link:hover {
+            background: var(--bg-light);
+        }
+
+        .sidebar-time {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-premium {
+            display: inline-block;
+            background: #ffc107;
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-left: 6px;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .article-headline {
+                font-size: 28px;
+            }
+
+            .usp-container {
+                justify-content: center;
+            }
+
+            .usp-item {
+                font-size: 12px;
+            }
+
+            .header-right {
+                gap: 10px;
+            }
+
+            .login-btn span:last-child {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .cta-input,
+            .cta-button {
+                width: 100%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .usp-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .usp-item {
+                font-size: 11px;
+            }
+
+            .usp-check {
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-container">
+                <a href="#" class="logo">Zonnepaneel Experts</a>
+                <div class="header-right">
+                    <button class="search-btn">
+                        <span>🔍</span>
+                    </button>
+                    <button class="login-btn">
+                        <span>👤</span>
+                        <span>Inloggen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- USP Bar -->
+        <div class="usp-bar">
+            <div class="usp-container">
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text"><strong>Vergelijk</strong> gratis offertes</div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text"><strong>Betrouwbare</strong> vakspecialisten</div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text"><strong>Onafhankelijk</strong> advies</div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-check">✓</div>
+                    <div class="usp-text">Meer dan <strong>10 jaar</strong> ervaring</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Advertorial Notice -->
+    <div class="advertorial-notice">
+        <strong>Advertorial</strong> | Dit artikel is aangeboden door Zonnepaneel Experts
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="#">Home</a> › <a href="#">Economie</a> › <a href="#">Energie</a> › Zonnepanelen + thuisbatterij 2025
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Article -->
+        <article class="article">
+            <span class="article-category">Energiebesparing</span>
+
+            <h1 class="article-headline">Met 67 jaar en 3 maanden met pensioen blijft nog wel even, want heel veel ouder worden we niet meer</h1>
+
+            <p class="article-intro">Het verwachte aantal levensjaren van een 65-jarige blijft dalen en is bijna weer zo laag dat de pensioenleeftijd terug naar 67 jaar zou moeten. Maar er is goed nieuws voor huiseigenaren: energiekosten dalen drastisch met de juiste investeringen.</p>
+
+            <!-- Author Meta -->
+            <div class="article-meta">
+                <div class="author-avatar">MH</div>
+                <div class="author-info">
+                    <div class="author-name">Marcel Hagedoorn</div>
+                    <div class="article-timestamp">12 november 2025, 10:00 • Laatste update: 10:33 • Leestijd: 8 minuten</div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=450&fit=crop" alt="Arbeiders bezig met installatie zonnepanelen" class="article-image">
+            <p class="image-caption">Steeds meer Nederlandse huiseigenaren investeren in zonnepanelen en thuisbatterijen om energiekosten te besparen. © ANP</p>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                <p><strong>De energierekening blijft stijgen.</strong> Wat drie jaar geleden nog €150 per maand was, kost nu vaak €300 of meer. Voor veel gezinnen is energie inmiddels één van de grootste vaste lasten geworden. En volgens energiedeskundigen is dit nog maar het begin.</p>
+
+                <p>Het ministerie van Sociale Zaken heeft deze week de AOW-leeftijd voor mensen die in 1964 zijn geboren vastgesteld: ook zij mogen in 2031 pas op een leeftijd van 67 jaar en drie maanden met pensioen. Nu is de pensioenleeftijd nog 67 jaar; vanaf 2028 wordt dat drie maanden per jaar meer.</p>
+
+                <p>Maar er is goed nieuws: steeds meer huiseigenaren pakken de controle terug en verlagen hun energierekening met 60% tot zelfs 85%. Hun geheim? Een slimme combinatie die tot voor kort nog onbetaalbaar was, maar nu binnen bereik is van veel Nederlandse huiseigenaren.</p>
+
+                <h2>Waarom 2025 het perfecte moment is</h2>
+
+                <p>Er zijn vier redenen waarom 2025 het ideale jaar is om over te stappen op zonnepanelen met thuisbatterij:</p>
+
+                <h3>💰 Subsidies zijn er nóg, maar niet voor altijd</h3>
+                <p>De overheid stimuleert verduurzaming actief met verschillende subsidieregelingen. Maar let op: deze hebben een einddatum en een budget dat snel oploopt. De ISDE regeling voor thuisbatterijen loopt bijvoorbeeld tot eind 2025, en vorig jaar was het budget in augustus al op.</p>
+
+                <h3>📈 Energieprijzen blijven stijgen</h3>
+                <p>Deskundigen voorspellen dat energieprijzen de komende jaren verder stijgen door de energietransitie en geopolitieke ontwikkelingen. Hoe eerder je start met energie opwekken en opslaan, hoe meer je bespaart.</p>
+
+                <!-- Embedded CTA -->
+                <div class="embedded-cta">
+                    <h3>Bereken jouw besparing</h3>
+                    <p>Vul je postcode in en ontvang een persoonlijk advies op basis van jouw situatie.</p>
+                    <form class="cta-form" onsubmit="return false;">
+                        <input type="text" class="cta-input" placeholder="1234 AB" pattern="[0-9]{4}\s?[A-Za-z]{2}">
+                        <button type="submit" class="cta-button">Bereken →</button>
+                    </form>
+                </div>
+
+                <h3>⚡ Salderingsregeling loopt af in 2027</h3>
+                <p>Tot 2027 kun je nog volledig salderen: je gebruikt energie die je terugleverde alsof het een spaarrekening is. Na 2027 is dit voordeel verdwenen. Met een thuisbatterij ben je hier niet van afhankelijk.</p>
+
+                <h3>📉 Batterijprijzen zijn sterk gedaald</h3>
+                <p>De prijzen van thuisbatterijen zijn de afgelopen 3 jaar met meer dan 40% gedaald door schaalvergroting en technologische verbeteringen. Een systeem dat in 2022 nog €15.000 kostte, is nu te krijgen voor €8.000-€10.000.</p>
+
+                <div class="info-box">
+                    <div class="info-box-title">💡 Goed om te weten</div>
+                    <p>De terugverdientijd van een zonnepanelen + batterij systeem is nu gemiddeld 5-7 jaar. Daarna profiteer je 20-25 jaar van gratis energie. Bij een energierekening van €3.000 per jaar betekent dit een totale besparing van €45.000 tot €60.000 over de levensduur van het systeem.</p>
+                </div>
+
+                <h2>Hoe werkt de combinatie precies?</h2>
+
+                <p>Het principe is simpel: je wekt overdag zonne-energie op, slaat overtollige energie op in een batterij, en gebruikt die energie 's avonds als de zon niet schijnt. Zo ben je minder afhankelijk van dure netwerkstroom.</p>
+
+                <p><strong>De drie componenten:</strong></p>
+                <ul>
+                    <li><strong>Zonnepanelen:</strong> De panelen op je dak zetten zonlicht om in elektriciteit. Een gemiddeld systeem heeft 8-12 panelen en wekt 3.000-4.500 kWh per jaar op.</li>
+                    <li><strong>Omvormer:</strong> Dit apparaat zet de gelijkstroom van de panelen om naar wisselstroom die je in huis kunt gebruiken. Moderne omvormers sturen automatisch overtollige energie naar de batterij.</li>
+                    <li><strong>Thuisbatterij:</strong> Een batterij met een capaciteit van 5-15 kWh slaat overtollige zonne-energie op voor later gebruik. De meest verkochte modellen hebben een capaciteit van 10 kWh.</li>
+                </ul>
+
+                <p>Overdag produceren de panelen meer energie dan je nodig hebt. Deze overtollige energie wordt opgeslagen in de batterij. 's Avonds, wanneer de panelen niet meer produceren maar jij juist veel energie verbruikt (koken, TV, verlichting), gebruik je de opgeslagen energie uit de batterij. Zo voorkom je dat je dure netwerkstroom hoeft in te kopen tijdens piekuren.</p>
+
+                <h2>Praktijkvoorbeeld: Het gezin De Jong uit Utrecht</h2>
+
+                <p>Mark en Vera de Jong installeerden in maart 2023 een compleet systeem. "Onze energierekening is van €320 naar €65 per maand gegaan. Dat is een besparing van €3.060 per jaar," vertelt Mark enthousiast.</p>
+
+                <p>"De investering was €17.200, maar na subsidies betaalden we €11.500. Bij €3.060 besparing per jaar hebben we het in 3,8 jaar terugverdiend. Daarna is het puur winst."</p>
+
+                <p>Het gezin heeft ook een elektrische auto aangeschaft die ze voornamelijk laden met eigen zonne-energie. "Dat scheelt nóg eens €1.200 per jaar aan brandstofkosten. We zijn zo blij dat we deze stap hebben gezet."</p>
+
+                <!-- Bottom CTA -->
+                <div class="embedded-cta">
+                    <h3>Gratis advies aanvragen</h3>
+                    <p>Ontvang binnen 24 uur een persoonlijk adviesrapport met berekening, subsidies en aanbevelingen voor jouw situatie.</p>
+                    <form class="cta-form" onsubmit="return false;">
+                        <input type="text" class="cta-input" placeholder="Postcode (1234 AB)">
+                        <input type="email" class="cta-input" placeholder="E-mailadres">
+                        <button type="submit" class="cta-button">Ontvang advies →</button>
+                    </form>
+                </div>
+
+                <h2>Conclusie</h2>
+
+                <p>Met de stijgende energieprijzen en dalende kosten van zonnepanelen en batterijen is 2025 het ideale moment om te investeren. De subsidies zijn er nog, maar niet voor altijd. Huiseigenaren die nu starten, profiteren direct van lagere energiekosten en verdienen hun investering binnen 5-7 jaar terug.</p>
+
+                <p>Wil je weten wat jij kunt besparen? Vraag dan een gratis adviesgesprek aan en ontvang een persoonlijke berekening voor jouw situatie.</p>
+            </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Lees ook -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">📰 Lees ook</div>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-time">10:00</div>
+                            <div class="sidebar-title">Met 67 jaar en 3 maanden met pensioen blijft nog wel even, want heel veel ouder worden...</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-time">08:00 <span class="sidebar-premium">PREMIUM</span></div>
+                            <div class="sidebar-title">Zonnepanelen haast onverkoopbaar, dus zetten bedrijven in op de thuisbatterij...</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-time">07:10</div>
+                            <div class="sidebar-title">ABN Amro neemt NIBC Bank over voor bijna 1 miljard euro</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-time">06:42</div>
+                            <div class="sidebar-title">Amsterdam vraagt 545 euro, Wormerland 21.000 euro: kosten voor bouwvergunning...</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-time">12 november 2025</div>
+                            <div class="sidebar-title">Privacybeleid Europese Unie mogelijk verscherpt voor AI-gestuurde 'dataverstrekking'</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Meer artikelen -->
+            <div class="sidebar-section">
+                <div class="sidebar-header">📌 Meer over Energie</div>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-title">Waarom thuisbatterijen steeds populairder worden in 2025</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-title">Salderingsregeling: dit moet je weten voor 2027</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-title">Subsidies voor verduurzaming: een compleet overzicht</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Simple form handling (vervang met je eigen logica)
+        document.querySelectorAll('.cta-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Bedankt! We nemen binnen 24 uur contact met je op.');
+            });
+        });
+    </script>
+</body>
+</html>
