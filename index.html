@@ -129,14 +129,32 @@
             font-weight: 400;
         }
 
-        /* Advertorial Label - Hidden */
+        /* Advertorial Label */
         .advertorial-notice {
-            display: none;
+            background: #fff3cd;
+            border-bottom: 1px solid #ffc107;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #856404;
         }
 
-        /* Breadcrumbs - Hidden */
+        /* Breadcrumbs */
         .breadcrumbs {
-            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .breadcrumbs a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
         }
 
         /* Main Layout */
@@ -273,56 +291,114 @@
             margin-bottom: 8px;
         }
 
-        /* Embedded CTA Box */
+        /* Embedded CTA Box - Redesigned */
         .embedded-cta {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: #fff;
-            padding: 32px;
-            border-radius: 8px;
-            margin: 32px 0;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid var(--primary-green);
+            padding: 36px 32px;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .embedded-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), #059669);
         }
 
         .embedded-cta h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.3;
         }
 
         .embedded-cta p {
-            margin-bottom: 20px;
-            opacity: 0.95;
+            margin-bottom: 24px;
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .cta-form {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
+            align-items: stretch;
         }
 
         .cta-input {
             flex: 1;
-            min-width: 200px;
-            padding: 14px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 4px;
+            min-width: 220px;
+            padding: 15px 18px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
             font-size: 15px;
-            background: rgba(255,255,255,0.95);
+            background: #fff;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .cta-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .cta-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+            transform: translateY(-1px);
         }
 
         .cta-button {
-            padding: 14px 32px;
-            background: #fff;
-            color: #059669;
+            padding: 15px 36px;
+            background: var(--primary-green);
+            color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
             white-space: nowrap;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
-            background: #f0f0f0;
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
         }
 
         /* Info Box */
@@ -443,13 +519,36 @@
         }
 
         @media (max-width: 640px) {
-            .cta-form {
-                flex-direction: column;
+            .embedded-cta {
+                padding: 28px 20px;
+                border-radius: 10px;
+                margin: 32px 0;
             }
 
-            .cta-input,
+            .embedded-cta h3 {
+                font-size: 22px;
+            }
+
+            .embedded-cta p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .cta-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cta-input {
+                width: 100%;
+                min-width: 0;
+                padding: 14px 16px;
+            }
+
             .cta-button {
                 width: 100%;
+                padding: 16px;
+                font-size: 15px;
             }
 
             .logo {
@@ -470,180 +569,6 @@
                 width: 18px;
                 height: 18px;
                 font-size: 10px;
-            }
-        }
-
-        /* Hero Banner - Compact */
-        .hero-cta {
-            background: linear-gradient(90deg, #f0fdf4 0%, #d1fae5 100%);
-            border-left: 4px solid var(--primary-green);
-            padding: 12px 0;
-            margin-bottom: 20px;
-        }
-
-        .hero-cta-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .hero-cta-content h2 {
-            color: var(--text-dark);
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 8px;
-        }
-
-        .hero-cta-content .highlight {
-            color: var(--primary-green);
-            font-size: 20px;
-        }
-
-        .hero-cta-benefits {
-            list-style: none;
-            margin: 0;
-            display: flex;
-            gap: 0 20px;
-            flex-wrap: wrap;
-        }
-
-        .hero-cta-benefits li {
-            color: var(--text-gray);
-            font-size: 13px;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .hero-cta-benefits li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-green);
-            font-weight: 700;
-            font-size: 13px;
-        }
-
-        /* Sidebar CTA Form */
-        .sidebar-cta-box {
-            background: #fff;
-            border: 2px solid var(--primary-green);
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
-        }
-
-        .sidebar-cta-box h3 {
-            font-size: 18px;
-            margin-bottom: 6px;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .sidebar-cta-box .subtitle {
-            font-size: 13px;
-            color: var(--text-gray);
-            margin-bottom: 14px;
-            line-height: 1.4;
-        }
-
-        .sidebar-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .sidebar-form input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d1d5db;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: all 0.2s;
-        }
-
-        .sidebar-form input:focus {
-            outline: none;
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-        }
-
-        .sidebar-form-submit {
-            width: 100%;
-            padding: 13px;
-            background: var(--primary-green);
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .sidebar-form-submit:hover {
-            background: #059669;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
-        }
-
-        .sidebar-form-privacy {
-            font-size: 11px;
-            color: var(--text-gray);
-            margin-top: 8px;
-            line-height: 1.3;
-            text-align: center;
-        }
-
-        .sidebar-trust-indicators {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .sidebar-trust-item {
-            text-align: center;
-            flex: 1;
-        }
-
-        .sidebar-trust-number {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--primary-green);
-            display: block;
-            line-height: 1.2;
-        }
-
-        .sidebar-trust-label {
-            font-size: 10px;
-            color: var(--text-gray);
-            display: block;
-            margin-top: 2px;
-        }
-
-        @media (max-width: 968px) {
-            .hero-cta {
-                padding: 10px 0;
-            }
-
-            .hero-cta-content h2 {
-                font-size: 16px;
-            }
-
-            .hero-cta-content .highlight {
-                font-size: 18px;
-            }
-
-            .hero-cta-benefits {
-                gap: 6px 16px;
-            }
-
-            .hero-cta-benefits li {
-                font-size: 12px;
             }
         }
     </style>
@@ -698,21 +623,6 @@
     <div class="breadcrumbs">
         <a href="#">Home</a> › <a href="#">Economie</a> › <a href="#">Energie</a> › Zonnepanelen + thuisbatterij 2025
     </div>
-
-    <!-- Hero Banner - Compact -->
-    <section class="hero-cta">
-        <div class="hero-cta-container">
-            <div class="hero-cta-content">
-                <h2>Bespaar tot <span class="highlight">€3.060 per jaar</span> op je energierekening</h2>
-                <ul class="hero-cta-benefits">
-                    <li>Gratis offertes vergelijken</li>
-                    <li>100% vrijblijvend</li>
-                    <li>Subsidiecheck inclusief</li>
-                    <li>Binnen 24 uur advies</li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
     <!-- Main Content -->
     <div class="main-container">
@@ -818,32 +728,6 @@
 
         <!-- Sidebar -->
         <aside class="sidebar">
-            <!-- CTA Form Box -->
-            <div class="sidebar-cta-box">
-                <h3>Ontvang gratis advies</h3>
-                <p class="subtitle">Vul je postcode in voor een persoonlijk adviesrapport</p>
-                <form class="sidebar-form" onsubmit="return false;">
-                    <input type="text" placeholder="Postcode (bijv. 1234 AB)" pattern="[0-9]{4}\s?[A-Za-z]{2}" required>
-                    <button type="submit" class="sidebar-form-submit">Bereken mijn besparing →</button>
-                </form>
-                <p class="sidebar-form-privacy">🔒 Jouw gegevens worden vertrouwelijk behandeld</p>
-
-                <div class="sidebar-trust-indicators">
-                    <div class="sidebar-trust-item">
-                        <span class="sidebar-trust-number">15.427</span>
-                        <span class="sidebar-trust-label">Tevreden klanten</span>
-                    </div>
-                    <div class="sidebar-trust-item">
-                        <span class="sidebar-trust-number">4.8/5</span>
-                        <span class="sidebar-trust-label">Score</span>
-                    </div>
-                    <div class="sidebar-trust-item">
-                        <span class="sidebar-trust-number">100%</span>
-                        <span class="sidebar-trust-label">Gratis</span>
-                    </div>
-                </div>
-            </div>
-
             <!-- Lees ook -->
             <div class="sidebar-section">
                 <div class="sidebar-header">📰 Lees ook</div>
@@ -906,75 +790,11 @@
     </div>
 
     <script>
-        // Enhanced form handling with analytics tracking
-        function handleFormSubmit(e, formType) {
-            e.preventDefault();
-
-            const formData = new FormData(e.target);
-            const postcode = formData.get('postcode') || e.target.querySelector('input[type="text"]').value;
-
-            // Track conversion event (vervang met je eigen analytics)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'lead_form_submit', {
-                    'event_category': 'Lead Generation',
-                    'event_label': formType,
-                    'value': postcode
-                });
-            }
-
-            // Hier zou je de data naar je backend sturen
-            // fetch('/api/leads', { method: 'POST', body: JSON.stringify({postcode}) })
-
-            // Show success message
-            const button = e.target.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = '✓ Gelukt!';
-            button.style.background = '#059669';
-
-            setTimeout(() => {
-                alert('Bedankt! 🎉\n\nJe ontvangt binnen 24 uur een persoonlijk adviesrapport op basis van jouw postcode.\n\nLet op je e-mail!');
-                button.textContent = originalText;
-            }, 500);
-        }
-
-        // Attach handlers to all forms
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sidebar form
-            const sidebarForm = document.querySelector('.sidebar-form');
-            if (sidebarForm) {
-                sidebarForm.addEventListener('submit', (e) => handleFormSubmit(e, 'sidebar_cta'));
-            }
-
-            // Embedded CTAs
-            document.querySelectorAll('.cta-form').forEach((form, index) => {
-                form.addEventListener('submit', (e) => handleFormSubmit(e, `embedded_cta_${index + 1}`));
-            });
-
-            // Scroll tracking for conversion optimization
-            let scrollTracked = {
-                25: false,
-                50: false,
-                75: false,
-                100: false
-            };
-
-            window.addEventListener('scroll', function() {
-                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-
-                Object.keys(scrollTracked).forEach(threshold => {
-                    if (scrollPercent >= threshold && !scrollTracked[threshold]) {
-                        scrollTracked[threshold] = true;
-
-                        // Track scroll depth
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'scroll_depth', {
-                                'event_category': 'Engagement',
-                                'event_label': `${threshold}%`,
-                                'value': threshold
-                            });
-                        }
-                    }
-                });
+        // Simple form handling (vervang met je eigen logica)
+        document.querySelectorAll('.cta-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Bedankt! We nemen binnen 24 uur contact met je op.');
             });
         });
     </script>
