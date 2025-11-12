@@ -899,36 +899,50 @@
                 padding: 10px 0;
             }
 
-            /* Minimal USP bar on mobile - no animation, smaller */
+            /* Ticker USP bar on mobile - single horizontal line */
             .usp-bar {
-                padding: 6px 0;
+                padding: 8px 0;
                 background: linear-gradient(135deg, var(--primary-blue), #1e4a8a);
+                overflow: hidden;
             }
 
             .usp-container {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-                padding: 0 16px;
-                animation: none;
+                flex-wrap: nowrap;
+                gap: 20px;
+                padding: 0;
+                animation: scroll-ticker 25s linear infinite;
+            }
+
+            @keyframes scroll-ticker {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .usp-container:hover {
+                animation-play-state: paused;
             }
 
             .usp-item {
-                font-size: 11px;
+                font-size: 12px;
                 white-space: nowrap;
                 flex-shrink: 0;
+                min-width: max-content;
             }
 
-            /* Show only first 2 USPs on mobile */
+            /* Show all USP items on mobile for seamless ticker */
             .usp-item:nth-child(n+3) {
-                display: none;
+                display: flex;
             }
 
             .usp-check {
-                width: 14px;
-                height: 14px;
-                font-size: 9px;
+                width: 15px;
+                height: 15px;
+                font-size: 10px;
             }
 
             /* Mobile sticky CTA - always visible */
