@@ -316,44 +316,14 @@
             color: var(--text-dark);
         }
 
-        /* Hero value proposition */
+        /* Hero value proposition - hidden */
         .hero-value-prop {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-            padding: 12px 0;
-            font-size: 15px;
-            color: var(--text-dark);
+            display: none;
         }
 
-        .hero-value-prop strong {
-            color: var(--primary-green);
-            font-weight: 700;
-            font-size: 17px;
-        }
-
-        .hero-value-prop span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* Micro trust badges */
+        /* Micro trust badges - hidden */
         .micro-trust {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 13px;
-            color: var(--text-gray);
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .micro-trust-star {
-            color: #fbbf24;
+            display: none;
         }
 
         /* Mobile mini testimonial */
@@ -376,42 +346,9 @@
             margin-left: 4px;
         }
 
-        /* Early CTA - appears right after intro */
+        /* Early CTA - hidden */
         .early-cta {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border: 2px solid var(--primary-green);
-            padding: 20px 24px;
-            border-radius: 10px;
-            margin: 28px 0;
-            text-align: center;
-        }
-
-        .early-cta-button {
-            display: inline-block;
-            width: 100%;
-            max-width: 400px;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, var(--primary-green) 0%, #059669 100%);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 17px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
-        }
-
-        .early-cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-        }
-
-        .early-cta-subtitle {
-            font-size: 13px;
-            color: var(--text-gray);
-            margin-top: 10px;
+            display: none;
         }
 
         /* Compact author byline under title */
@@ -446,14 +383,9 @@
             border: 1px solid #ffeaa7;
         }
 
-        /* Trust bar */
+        /* Trust bar - hidden */
         .trust-bar {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
-            padding: 12px 0;
-            flex-wrap: wrap;
+            display: none;
         }
 
         .trust-item {
@@ -1115,50 +1047,27 @@
                 font-size: 13px;
             }
 
-            .article-image {
-                order: 4;
-                margin-bottom: 16px;
-                border-radius: 10px;
-                max-height: 220px;
-                object-fit: cover;
-            }
-
-            /* Hero value prop mobile */
+            /* Hero value prop mobile - hidden */
             .hero-value-prop {
-                order: 2.5;
-                font-size: 13px;
-                gap: 10px;
-                margin-bottom: 14px;
-                padding: 10px 0;
+                display: none;
             }
 
-            .hero-value-prop strong {
-                font-size: 16px;
-            }
-
-            /* Micro trust mobile */
+            /* Micro trust mobile - hidden */
             .micro-trust {
-                order: 2.6;
-                font-size: 12px;
-                gap: 10px;
-                margin-bottom: 14px;
-                flex-wrap: wrap;
+                display: none;
             }
 
-            /* Mobile mini testimonial - show on mobile */
+            /* Mobile mini testimonial - hidden */
             .mobile-mini-testimonial {
-                display: block;
-                order: 6.5;
-                margin: 18px 0;
-                font-size: 14px;
-                padding: 12px 14px;
+                display: none;
             }
 
-            /* Early CTA mobile */
+            /* Early CTA mobile - show above image */
             .early-cta {
-                order: 6.7;
+                display: block;
+                order: 3.5;
                 padding: 18px 20px;
-                margin: 24px 0;
+                margin: 20px 0;
             }
 
             .early-cta-button {
@@ -1166,6 +1075,14 @@
                 padding: 17px 24px;
                 font-size: 16px;
                 min-height: 52px;
+            }
+
+            .article-image {
+                order: 4;
+                margin-bottom: 16px;
+                border-radius: 10px;
+                max-height: 220px;
+                object-fit: cover;
             }
 
             .image-caption {
