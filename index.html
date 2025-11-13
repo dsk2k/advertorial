@@ -1029,18 +1029,25 @@
 
             .mobile-sticky-input {
                 -webkit-tap-highlight-color: transparent;
-                padding: 16px 14px;
+                padding: 16px 12px;
                 font-size: 15px;
                 border: 2px solid #10b981;
                 font-weight: 500;
+                min-width: 0;
+                flex: 1 1 auto;
             }
 
             .mobile-sticky-button {
-                padding: 16px 18px;
-                font-size: 15px;
+                padding: 16px 16px;
+                font-size: 14px;
                 font-weight: 700;
                 background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
                 box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+                flex: 0 0 auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 60%;
             }
 
             .mobile-sticky-value {
